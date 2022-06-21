@@ -1,12 +1,21 @@
 .clients-list {
 	display: flex;
+	@include breakpoint-mobile-tablet {
+		margin: -15px;
+		flex-wrap: wrap;
+	}
 
 	&__item {
+		margin: 15px;
+		width: 210px;
 		height: 92px;
-		width: 170px;
-
-		&:not(:last-child) {
-			margin-right: 30px;
+		@include breakpoint(desktop) {
+			margin: 0;
+			height: 92px;
+			width: 170px;
+			&:not(:last-child) {
+				margin-right: 30px;
+			}
 		}
 	}
 	&__link {

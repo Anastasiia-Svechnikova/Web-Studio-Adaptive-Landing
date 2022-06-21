@@ -36,10 +36,14 @@ body {
 			display: none;
 		}
 	}
+	&--gray {
+		background-color: $secondary-bg-color;
+	}
+	&--no-top-padding {
+		padding-top: 0;
+	}
 }
-.section--no-top-padding {
-	padding-top: 0;
-}
+
 .section__title {
 	margin-bottom: 30px;
 
