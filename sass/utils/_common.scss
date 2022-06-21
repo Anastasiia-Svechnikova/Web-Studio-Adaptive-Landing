@@ -41,7 +41,7 @@ body {
 	padding-top: 0;
 }
 .section__title {
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 
 	text-align: center;
 	font-weight: 700;
@@ -50,6 +50,7 @@ body {
 	color: $title-text-color;
 
 	@include breakpoint(desktop) {
+		margin-bottom: 50px;
 		font-size: $font-size-title-desktop;
 		line-height: 1.16;
 	}
