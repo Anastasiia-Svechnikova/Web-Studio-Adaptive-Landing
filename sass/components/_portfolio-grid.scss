@@ -2,15 +2,22 @@
 	@include breakpoint(tablet) {
 		display: flex;
 		flex-wrap: wrap;
+		margin: -15px;
 	}
 
 	&__item {
-		&:not(:last-child) {
-			margin-bottom: 30px;
+		@include breakpoint-max(mobile) {
+			&:not(:last-child) {
+				margin-bottom: 30px;
+			}
+		}
+		@include breakpoint(tablet) {
+			width: 354px;
+			margin: 15px;
 		}
 		@include breakpoint(desktop) {
 			@include grid-item-width(60px, 3);
-			margin-bottom: 30px;
+			margin: 0 0 30px 0;
 			&:hover,
 			&:focus {
 				box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16), 0px 4px 4px 0px rgba(0, 0, 0, 0.06),
@@ -60,6 +67,12 @@
 		border-bottom: 1px solid #eeeeee;
 		border-left: 1px solid #eeeeee;
 		border-right: 1px solid #eeeeee;
+
+		@include breakpoint-tablet-only {
+			&--plus-padding {
+				padding-bottom: 56px;
+			}
+		}
 	}
 	&__subtitle {
 		font-weight: 700;

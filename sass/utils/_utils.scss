@@ -70,8 +70,8 @@
 		@content;
 	}
 }
-// @mixin breakpoint-tablet-only() {
-// 	@media screen and (min-width: 768px) and (max-width: 1199px) {
-// 		@content;
-// 	}
-// }
+@mixin breakpoint-tablet-only() {
+	@media screen and (min-width: 768px) and (max-width: 1199px) {
+		@content;
+	}
+}
