@@ -35,3 +35,38 @@
 @mixin transition-triple($property, $second-property, $third-property, $time: 250ms, $cubic: $cubic-bezier) {
 	transition: $property $time $cubic, $second-property $time $cubic, $third-property $time $cubic;
 }
+
+@mixin breakpoint($point) {
+	@if $point==mobile {
+		@media screen and (min-width: 480px) {
+			@content;
+		}
+	}
+	@if $point==tablet {
+		@media screen and (min-width: 769px) {
+			@content;
+		}
+	}
+	@if $point==laptop {
+		@media only screen and (min-width: 1200px) {
+			@content;
+		}
+	}
+}
+@mixin breakpoint-max($point) {
+	@if $point==mobile {
+		@media screen and (max-width: 479px) {
+			@content;
+		}
+	}
+	@if $point==tablet {
+		@media screen and (max-width: 768px) {
+			@content;
+		}
+	}
+	@if $point==desktop {
+		@media only screen and (max-width: 1199px) {
+			@content;
+		}
+	}
+}
