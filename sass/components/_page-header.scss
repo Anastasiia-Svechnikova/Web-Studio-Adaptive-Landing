@@ -4,11 +4,17 @@
 	&__container {
 		display: flex;
 		align-items: center;
+		@include breakpoint-max(mobile) {
+			padding: 16px 15px;
+		}
 	}
 }
 
 .navigation__list {
 	display: flex;
+	@include breakpoint-max(mobile) {
+		display: none;
+	}
 }
 
 .navigation__item {
@@ -62,6 +68,9 @@
 	}
 }
 .contacts {
+	@include breakpoint-max(mobile) {
+		display: none;
+	}
 	display: flex;
 	margin-left: auto;
 	&__item {

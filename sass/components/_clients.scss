@@ -1,8 +1,12 @@
 .clients-list {
 	display: flex;
-	@include breakpoint-mobile-tablet {
-		margin: -15px;
-		flex-wrap: wrap;
+
+	margin: -15px;
+	flex-wrap: wrap;
+	justify-content: center;
+	@include breakpoint(desktop) {
+		margin: 0;
+		flex-wrap: no-wrap;
 	}
 
 	&__item {
