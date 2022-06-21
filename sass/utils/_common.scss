@@ -6,18 +6,33 @@ body {
 	font-size: $font-size-main;
 }
 .container {
-	max-width: $container-size;
 	padding-left: $container-padding;
 	padding-right: $container-padding;
 	margin-left: auto;
 	margin-right: auto;
+
+	@include breakpoint(mobile) {
+		width: $container-size-mobile;
+	}
+	@include breakpoint(tablet) {
+		width: $container-size-tablet;
+	}
+	@include breakpoint(desktop) {
+		max-width: $container-size;
+		width: $container-size;
+	}
 }
 
 .section {
-	padding-top: $section-vertical-padding;
-	padding-bottom: $section-vertical-padding;
+	padding-top: $section-vertical-padding-mobile-tablet;
+	padding-bottom: $section-vertical-padding-mobile-tablet;
+	@include breakpoint(desktop) {
+		padding-top: $section-vertical-padding;
+		padding-bottom: $section-vertical-padding;
+	}
+
 	&--desktop-only {
-		@include breakpoint-max(desktop) {
+		@include breakpoint-max(tablet) {
 			display: none;
 		}
 	}
@@ -30,11 +45,14 @@ body {
 
 	text-align: center;
 	font-weight: 700;
-	font-size: $font-size-title;
-	line-height: 1.16;
-
-	// @include line-height($font-size-title, 42);
+	font-size: $font-size-title-mobile;
+	line-height: 1.18;
 	color: $title-text-color;
+
+	@include breakpoint(desktop) {
+		font-size: $font-size-title-desktop;
+		line-height: 1.16;
+	}
 }
 
 .button {

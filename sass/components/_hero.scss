@@ -1,33 +1,38 @@
 .hero {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1600px;
-    max-height: 600px;
-    background-image: linear-gradient(to right,
-            rgba(47, 48, 58, 0.4),
-            rgba(47, 48, 58, 0.4)),
-        url(../images/overlay.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: rgba(196, 196, 196, 1);
-    text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1600px;
+	max-height: 600px;
+	background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/overlay.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: rgba(196, 196, 196, 1);
+	text-align: center;
 
-    &__title {
-        font-weight: 900;
-        font-size: $font-size-max;
-        line-height: 1.36;
-        letter-spacing: $letter-spacing-big;
-        text-transform: uppercase;
-        color: $main-bg-color;
-        margin-bottom: 30px;
-    }
-    &__container {
-        padding-top: 200px;
-        padding-bottom: 200px;
+	&__title {
+		font-weight: 900;
+		font-size: 26px;
+		line-height: 1.6;
+		letter-spacing: $letter-spacing-big;
+		text-transform: uppercase;
+		color: $main-bg-color;
+		margin-bottom: 30px;
+		@include breakpoint(desktop) {
+			font-size: $font-size-max;
+			line-height: 1.36;
+		}
+	}
+	&__container {
+		padding-top: 200px;
+		padding-bottom: 200px;
 
-        max-width: 696px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+		max-width: 360px;
+		margin-left: auto;
+		margin-right: auto;
+
+		@include breakpoint(desktop) {
+			max-width: 696px;
+		}
+	}
 }

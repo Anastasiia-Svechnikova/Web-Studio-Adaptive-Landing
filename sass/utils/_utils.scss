@@ -47,7 +47,7 @@
 			@content;
 		}
 	}
-	@if $point==laptop {
+	@if $point==desktop {
 		@media only screen and (min-width: 1200px) {
 			@content;
 		}
@@ -55,18 +55,18 @@
 }
 @mixin breakpoint-max($point) {
 	@if $point==mobile {
-		@media screen and (max-width: 479px) {
-			@content;
-		}
-	}
-	@if $point==tablet {
 		@media screen and (max-width: 768px) {
 			@content;
 		}
 	}
-	@if $point==desktop {
-		@media only screen and (max-width: 1199px) {
+	@if $point==tablet {
+		@media screen and (max-width: 1199px) {
 			@content;
 		}
+	}
+}
+@mixin breakpoint-mobile-tablet() {
+	@media screen and (min-width: 480px) and (max-width: 1199px) {
+		@content;
 	}
 }
