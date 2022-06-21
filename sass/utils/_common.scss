@@ -31,16 +31,16 @@ body {
 		padding-bottom: $section-vertical-padding;
 	}
 
-	&--desktop-only {
-		@include breakpoint-max(tablet) {
-			display: none;
-		}
-	}
 	&--gray {
 		background-color: $secondary-bg-color;
 	}
 	&--no-top-padding {
 		padding-top: 0;
+	}
+}
+.desktop-only {
+	@include breakpoint-max(tablet) {
+		display: none;
 	}
 }
 

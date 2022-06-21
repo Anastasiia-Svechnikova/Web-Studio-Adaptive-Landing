@@ -1,67 +1,92 @@
 .footer {
-    background: #2F303A;
+	background: #2f303a;
 
-    padding-top: 60px;
-    padding-bottom: 60px;
+	padding-top: 60px;
+	padding-bottom: 60px;
 }
 .footer__container {
-    display: flex;
+	@include breakpoint(tablet) {
+		display: flex;
+	}
+	@include breakpoint-max(mobile) {
+		text-align: center;
+	}
 }
-.footer-contacts {
-    max-width: 300px;
-    width: 100%;
 
-}
 .address {
-    font-size: 14px;
-    line-height: 1.71;
+	font-size: 14px;
+	line-height: 1.71;
 }
-.addres-list__item:not(:last-child) {
-    margin-bottom: 9px;
-}
-.addres-list__link--white {
-    color: $main-bg-color;
-    @include transition-single(color);
-    &:hover,
-    &:focus {
-        color: $accent-color;
-    }
-}
-.addres-list__link--transparent {
-    color: rgba(255, 255, 255, 0.6);
-    &:hover,
-        &:focus {
-            color: $accent-color;
-        }
-}
-.footer__socials {
-    max-width: 300px;
-    width: 100%;
+.address-list {
+	&__item:not(:last-child) {
+		margin-bottom: 8px;
+
+		@include breakpoint(desktop) {
+			margin-bottom: 9px;
+		}
+	}
+	&__item:last-child {
+		margin-bottom: 60px;
+		@include breakpoint(desktop) {
+			margin-bottom: 0;
+		}
+	}
+
+	&__link--white {
+		color: $main-bg-color;
+		@include transition-single(color);
+		&:hover,
+		&:focus {
+			color: $accent-color;
+		}
+	}
+	&__link--transparent {
+		color: rgba(255, 255, 255, 0.6);
+		&:hover,
+		&:focus {
+			color: $accent-color;
+		}
+	}
 }
 .strong {
-    margin-bottom: 20px;
+	margin-bottom: 20px;
 
-    display: block;
-    text-transform: uppercase;
-    color: $main-bg-color;
-    font-style: normal;
-    font-size: $font-size-main;
-    font-weight: 700;
-    line-height: 1.2;
+	display: block;
+	text-transform: uppercase;
+	color: $main-bg-color;
+	font-style: normal;
+	font-size: $font-size-main;
+	font-weight: 700;
+	line-height: 1.2;
+}
+@include breakpoint(tablet) {
+	.footer-contacts {
+		max-width: 300px;
+		width: 100%;
+	}
+
+	.footer__socials {
+		max-width: 300px;
+		width: 100%;
+	}
 }
 
 .footer__social-list {
-    padding: 0;
-    justify-content: flex-start;
+	padding: 0;
+	@include breakpoint-max(mobile) {
+		margin-bottom: 60px;
+	}
+	@include breakpoint(desktop) {
+		justify-content: flex-start;
+	}
 }
 .social-list__link--dark {
-    background-color: rgba(255, 255, 255, 0.1);
-
+	background-color: rgba(255, 255, 255, 0.1);
 }
 .social-list__icon-light {
-    --color4: #ffffff;
+	--color4: #ffffff;
 }
 .social-list__link:hover,
 .social-list__link:focus {
-    background-color: $accent-color;
+	background-color: $accent-color;
 }

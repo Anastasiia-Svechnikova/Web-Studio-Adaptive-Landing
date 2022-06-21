@@ -1,22 +1,27 @@
 .logo {
-    color: $logo-dark-color;
-    font-family: $font-family-logo;
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 1.19;
-    margin-right: 93px;
+	color: $logo-dark-color;
+	font-family: $font-family-logo;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 1.19;
 
-    &__text--accent{
-        color: $logo-accent-color;
-    }
+	@include breakpoint(desktop) {
+		margin-right: 93px;
+		font-size: 26px;
+	}
 
-    &__text--white{
-        color: $logo-light-color;
-    }
+	&__text--accent {
+		color: $logo-accent-color;
+	}
 
-    
+	&__text--white {
+		color: $logo-light-color;
+	}
 }
-.footer__logo{
-        display: inline-block;
-        margin-bottom: 20px;
-    }
+.footer__logo {
+	display: block;
+	margin-bottom: 20px;
+	@include breakpoint(desktop) {
+		display: inline-block;
+	}
+}
