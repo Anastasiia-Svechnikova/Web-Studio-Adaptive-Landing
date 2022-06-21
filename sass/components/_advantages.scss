@@ -31,11 +31,21 @@
 		font-size: $font-size-main;
 		line-height: 1.71;
 	}
+	@include breakpoint(tablet) {
+		display: flex;
+		flex-wrap: wrap;
+		margin: -15px;
+		&__item {
+			@include grid-item-width(60px, 2);
+			margin: 15px;
+		}
+	}
 	@include breakpoint(desktop) {
 		display: flex;
+		margin: 0;
 		&__item {
 			@include grid-item-max-width(90px, 4);
-			// max-width: calc((100% - 90px) / 4);
+			margin: 0;
 
 			&:not(:last-child) {
 				margin-right: 30px;
