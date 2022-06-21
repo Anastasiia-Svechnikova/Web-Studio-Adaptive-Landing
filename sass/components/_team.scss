@@ -2,6 +2,12 @@
 	text-align: center;
 	@include breakpoint(tablet) {
 		display: flex;
+		flex-wrap: wrap;
+		margin: -15px;
+	}
+	@include breakpoint(desktop) {
+		flex-wrap: nowrap;
+		margin: 0;
 	}
 
 	&__item {
@@ -17,8 +23,12 @@
 				margin-bottom: 30px;
 			}
 		}
-
+		@include breakpoint(tablet) {
+			width: 354px;
+			margin: 15px;
+		}
 		@include breakpoint(desktop) {
+			margin: 0;
 			width: calc((100% - 90px) / 4);
 			max-width: 270px;
 			&:not(:first-child) {

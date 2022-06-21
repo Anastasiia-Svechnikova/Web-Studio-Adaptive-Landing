@@ -13,9 +13,12 @@
 		margin: 15px;
 		width: 210px;
 		height: 92px;
+		@include breakpoint(tablet) {
+			width: 226px;
+		}
 		@include breakpoint(desktop) {
 			margin: 0;
-			height: 92px;
+			// height: 92px;
 			width: 170px;
 			&:not(:last-child) {
 				margin-right: 30px;

@@ -38,6 +38,9 @@
 		&__item {
 			@include grid-item-width(60px, 2);
 			margin: 15px;
+			&:not(:last-child) {
+				margin-bottom: 0;
+			}
 		}
 	}
 	@include breakpoint(desktop) {
@@ -48,6 +51,7 @@
 			margin: 0;
 
 			&:not(:last-child) {
+				margin-bottom: 0;
 				margin-right: 30px;
 			}
 		}
