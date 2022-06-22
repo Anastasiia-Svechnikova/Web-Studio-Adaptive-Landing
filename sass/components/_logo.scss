@@ -1,4 +1,6 @@
 .logo {
+	display: flex;
+	justify-content: center;
 	color: $logo-dark-color;
 	font-family: $font-family-logo;
 	font-weight: 700;
@@ -6,6 +8,7 @@
 	line-height: 1.19;
 
 	@include breakpoint(desktop) {
+		justify-content: flex-start;
 		margin-right: 93px;
 		font-size: 26px;
 	}
@@ -19,9 +22,8 @@
 	}
 }
 .footer__logo {
-	display: block;
 	margin-bottom: 20px;
-	@include breakpoint(desktop) {
-		display: inline-block;
-	}
+	// @include breakpoint(desktop) {
+	// 	display: inline-block;
+	// }
 }
