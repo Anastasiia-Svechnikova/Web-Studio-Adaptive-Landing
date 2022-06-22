@@ -7,6 +7,14 @@
 		@include breakpoint-max(mobile) {
 			padding: 16px 15px;
 		}
+		@include breakpoint-tablet-only {
+			justify-content: space-between;
+		}
+	}
+}
+.navigation {
+	@include breakpoint-tablet-only {
+		margin-left: 2px;
 	}
 }
 
@@ -61,6 +69,12 @@
 
 		@include transition-single(color);
 		// transition: color $transition-time-main $cubic-bezier;
+		@include breakpoint-tablet-only {
+			&:first-child {
+				padding-top: 5px;
+				padding-bottom: 5px;
+			}
+		}
 	}
 	&:hover,
 	&:focus {
@@ -73,6 +87,10 @@
 	}
 	display: flex;
 	margin-left: auto;
+	@include breakpoint-tablet-only {
+		flex-direction: column-reverse;
+		margin-left: 0;
+	}
 	&__item {
 		font-weight: 500;
 		font-size: $font-size-main;
@@ -81,6 +99,9 @@
 	}
 	&__item:not(:last-child) {
 		margin-right: 50px;
+		@include breakpoint-tablet-only {
+			margin: 0;
+		}
 	}
 	&__icon {
 		margin-right: 10px;
