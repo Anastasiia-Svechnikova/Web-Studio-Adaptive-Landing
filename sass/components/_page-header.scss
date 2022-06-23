@@ -1,8 +1,7 @@
 .page-header {
 	border-bottom: 1px solid #ececec;
-
+	position: relative;
 	&__container {
-		position: relative;
 		display: flex;
 		align-items: center;
 		@include breakpoint-max(mobile) {
