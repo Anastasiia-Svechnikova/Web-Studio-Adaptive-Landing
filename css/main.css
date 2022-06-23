@@ -1344,6 +1344,7 @@ body {
 .works-card__thumb {
   position: relative;
   overflow: hidden;
+  height: 294px;
 }
 .works-card__image {
   display: block;
