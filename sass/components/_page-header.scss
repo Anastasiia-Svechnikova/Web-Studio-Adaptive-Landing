@@ -2,36 +2,121 @@
 	border-bottom: 1px solid #ececec;
 
 	&__container {
+		position: relative;
 		display: flex;
 		align-items: center;
 		@include breakpoint-max(mobile) {
 			padding: 16px 15px;
+			justify-content: space-between;
 		}
 		@include breakpoint-tablet-only {
 			justify-content: space-between;
 		}
 	}
+
+	&__button {
+		position: absolute;
+		top: 10px;
+
+		right: 15px;
+		z-index: 2;
+		align-self: flex-end;
+		padding: 0;
+		margin: 0;
+		margin-left: auto;
+		background-color: transparent;
+		border: none;
+		&.is-open {
+			.page-header__icon {
+				&--close {
+					opacity: 1;
+				}
+				&--burger {
+					opacity: 0;
+				}
+			}
+		}
+		@include breakpoint(tablet) {
+			display: none;
+		}
+	}
+	&__icon {
+		display: block;
+		@include transition-single(fill);
+		&:hover,
+		&:focus {
+			fill: $accent-color;
+		}
+		&--close {
+			opacity: 0;
+		}
+		&--burger {
+			opacity: 1;
+		}
+	}
 }
+
 .navigation {
-	@include breakpoint-tablet-only {
-		margin-left: 2px;
+	@include breakpoint-max(mobile) {
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: -736px;
+		padding: 32px 30px;
+		background-color: $main-bg-color;
+
+		display: none;
+		&.is-open {
+			display: block;
+
+			& .navigation__list {
+				display: flex;
+				flex-direction: column;
+			}
+		}
+	}
+	@include breakpoint(tablet) {
+		display: flex;
+	}
+
+	.mobile-socials {
+		font-size: 18px;
+		color: $accent-color;
+		font-weight: 500;
+		line-height: 1.22;
+		letter-spacing: $letter-spacing-small;
+		&__list {
+			display: flex;
+		}
+		&__item:not(:last-child) {
+			border-right: 1px solid rgba(33, 33, 33, 0.2);
+		}
+		&__link {
+			padding: 0 10px;
+		}
+		@include breakpoint(tablet) {
+			display: none;
+		}
 	}
 }
 
 .navigation__list {
 	display: flex;
+	@include breakpoint-tablet-only {
+		margin-right: 84px;
+	}
+	@include breakpoint(desktop) {
+		margin-right: 305px;
+	}
 	@include breakpoint-max(mobile) {
-		display: none;
+		margin-bottom: 286px;
 	}
 }
 
 .navigation__item {
 	position: relative;
-
-	font-weight: 500;
-	font-size: $font-size-main;
-	line-height: 1.14;
-	letter-spacing: $letter-spacing-small;
 
 	color: $title-text-color;
 
@@ -46,22 +131,35 @@
 	color: $title-text-color;
 	--color1: currentColor;
 
+	font-weight: 500;
+	font-size: $font-size-main;
+	line-height: 1.14;
+	letter-spacing: $letter-spacing-small;
+	@include breakpoint-max(mobile) {
+		font-size: 40px;
+		line-height: 1.17;
+		letter-spacing: $letter-spacing-small;
+		padding: 16px 10px;
+	}
+
 	@include transition-single(color);
 	// transition: color $transition-time-main $cubic-bezier;
 	&--current {
 		color: $accent-color;
 	}
-	&--current::after {
-		position: absolute;
-		bottom: 0;
-		left: 0;
+	@include breakpoint(tablet) {
+		&--current::after {
+			position: absolute;
+			bottom: 0;
+			left: 0;
 
-		width: 100%;
-		height: 4px;
+			width: 100%;
+			height: 4px;
 
-		content: "";
-		background-color: $accent-color;
-		border-radius: 2px;
+			content: "";
+			background-color: $accent-color;
+			border-radius: 2px;
+		}
 	}
 	&--light {
 		display: flex;
@@ -83,27 +181,40 @@
 }
 .contacts {
 	@include breakpoint-max(mobile) {
-		display: none;
+		display: block;
+		margin-bottom: 48px;
 	}
-	display: flex;
-	margin-left: auto;
+
+	@include breakpoint(tablet) {
+		display: flex;
+		justify-content: center;
+	}
 	@include breakpoint-tablet-only {
 		flex-direction: column;
-		margin-left: 0;
 	}
 	&__item {
-		font-weight: 500;
-		font-size: $font-size-main;
-		line-height: 1.14;
-		letter-spacing: $letter-spacing-small;
+		@include breakpoint-max(mobile) {
+			font-size: 34px;
+			.page-header__link {
+				font-size: inherit;
+			}
+			&:last-child {
+				font-size: 24px;
+				.page-header__link {
+					font-size: inherit;
+				}
+			}
+		}
 	}
 	&__item:not(:last-child) {
-		margin-right: 50px;
-		@include breakpoint-tablet-only {
-			margin: 0;
+		@include breakpoint(desktop) {
+			margin-right: 30px;
 		}
 	}
 	&__icon {
 		margin-right: 10px;
+		@include breakpoint-max(mobile) {
+			display: none;
+		}
 	}
 }
