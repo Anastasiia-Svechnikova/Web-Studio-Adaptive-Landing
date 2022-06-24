@@ -238,7 +238,7 @@ body {
   -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.page-header__icon:hover, .page-header__icon:focus {
+.page-header__icon:active {
   fill: #2196f3;
 }
 .page-header__icon--close {
@@ -246,6 +246,11 @@ body {
 }
 .page-header__icon--burger {
   opacity: 1;
+}
+@media screen and (min-width: 768px) {
+  .page-header__icon:hover, .page-header__icon:focus {
+    fill: #2196f3;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -434,7 +439,7 @@ body {
     font-size: inherit;
   }
 }
-@media screen and (min-width: 480px) and (max-width: 768px) {
+@media screen and (min-width: 480px) and (max-width: 767px) {
   .contacts__item {
     font-size: 34px;
   }

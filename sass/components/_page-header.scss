@@ -44,8 +44,7 @@
 		display: block;
 		@include transition-single(fill);
 
-		&:hover,
-		&:focus {
+		&:active {
 			fill: $accent-color;
 		}
 		&--close {
@@ -53,6 +52,12 @@
 		}
 		&--burger {
 			opacity: 1;
+		}
+		@include breakpoint(tablet) {
+			&:hover,
+			&:focus {
+				fill: $accent-color;
+			}
 		}
 	}
 }
@@ -209,7 +214,7 @@
 				}
 			}
 		}
-		@media screen and (min-width: 480px) and (max-width: 768px) {
+		@media screen and (min-width: 480px) and (max-width: 767px) {
 			font-size: 34px;
 			.page-header__link {
 				font-size: inherit;
