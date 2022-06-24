@@ -417,17 +417,19 @@ body {
             flex-direction: column;
   }
 }
-.contacts__item {
-  font-size: 24px;
-}
-.contacts__item .page-header__link {
-  font-size: inherit;
-}
-.contacts__item:last-child {
-  font-size: 20px;
-}
-.contacts__item:last-child .page-header__link {
-  font-size: inherit;
+@media screen and (max-width: 479px) {
+  .contacts__item {
+    font-size: 24px;
+  }
+  .contacts__item .page-header__link {
+    font-size: inherit;
+  }
+  .contacts__item:last-child {
+    font-size: 24px;
+  }
+  .contacts__item:last-child .page-header__link {
+    font-size: inherit;
+  }
 }
 @media screen and (min-width: 480px) and (max-width: 768px) {
   .contacts__item {

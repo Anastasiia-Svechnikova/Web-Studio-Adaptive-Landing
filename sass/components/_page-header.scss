@@ -196,18 +196,18 @@
 		flex-direction: column;
 	}
 	&__item {
-		font-size: 24px;
-		.page-header__link {
-			font-size: inherit;
-		}
-		&:last-child {
-			font-size: 20px;
+		@media screen and (max-width: 479px) {
+			font-size: 24px;
 			.page-header__link {
 				font-size: inherit;
 			}
+			&:last-child {
+				font-size: 24px;
+				.page-header__link {
+					font-size: inherit;
+				}
+			}
 		}
-
-		// @include breakpoint-max(mobile)
 		@media screen and (min-width: 480px) and (max-width: 768px) {
 			font-size: 34px;
 			.page-header__link {
