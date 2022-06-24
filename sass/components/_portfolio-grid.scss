@@ -3,6 +3,9 @@
 		display: flex;
 		flex-wrap: wrap;
 		margin: -15px;
+		@include breakpoint(desktop) {
+			margin: 0;
+		}
 	}
 
 	&__item {
